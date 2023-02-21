@@ -35,11 +35,11 @@
       
       // ** Recupera informações do registro do localStorage
       var cidade_localstorage = localStorage.getItem("cidade");
-      console.log(cidade_localstorage);
+      // console.log(cidade_localstorage);
 
       // ** Converte a string JSON em ovjeto JavaScript
       var dados_cidade = JSON.parse(cidade_localstorage);
-      console.log(dados_cidade);
+      // console.log(dados_cidade);
 
       // ** Enviar para o HTML os dados salvo do LocalStorage
       document.getElementById("conteudo").innerHTML = "Cidade: " +
