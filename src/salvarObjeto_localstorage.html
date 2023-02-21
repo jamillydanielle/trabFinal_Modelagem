@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <title>ClimaBR</title>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <app-root></app-root>
+
+  <span id="conteudo"></span>
+  
+  <script>
+    salvarlocalStorage();
+    
+    function salvarlocalStorage(){
+
+      // ** Salva o objeto  no localStorage
+      localStorage.setItem("cidade", JSON.stringify({cidade: "Lavras", estado: "Minas Gerais"}));
+    
+      
+      // ** Recupera informações do registro do localStorage
+      var cidade_localstorage = localStorage.getItem("cidade");
+      console.log(cidade_localstorage);
+
+      // ** Converte a string JSON em ovjeto JavaScript
+      var dados_cidade = JSON.parse(cidade_localstorage);
+      console.log(dados_cidade);
+
+      // ** Enviar para o HTML os dados salvo do LocalStorage
+      document.getElementById("conteudo").innerHTML = "Cidade: " +
+      dados_cidade.cidade + "<br>Estado: " + dados_cidade.estado + "<br>";
+    }
+  </script>
+
+</body>
+
+</html>
