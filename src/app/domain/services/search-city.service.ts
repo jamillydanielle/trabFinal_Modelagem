@@ -3,6 +3,8 @@ import { CityNotFoundError } from "../errors/city-not-found.error";
 import { CityRepository } from "./protocols/city-repository";
 
 export class SearchCityService {
+
+
     constructor(private readonly repo: CityRepository) {}
 
     async searchByName(name: string): Promise<City[]> {
